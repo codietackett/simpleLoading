@@ -1,0 +1,62 @@
+:root {
+    --loading-color: #ffffff;
+    --loading-size: 50px;
+    --loading-speed: 1s;
+    --main-bg-color: rgba(56, 116, 172, 0.507);
+}
+
+body {
+    background-color: var(--main-bg-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.main-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.loading-text {
+    text-align: center;
+    font-size: 24px;
+    color: var(--loading-color);
+}
+
+.loading-dots {
+    font-size: 24px;
+    color: var(--loading-color);
+    position: relative;
+}
+
+.loading-dots::after {
+    content: '';
+    animation: dots 1s steps(4) infinite;
+    position: absolute;
+}
+
+@keyframes dots {
+    0% {
+        content: 'Loading';
+    }
+    25% {
+        content: 'Loading.';
+    }
+    50% {
+        content: 'Loading..';
+    }
+    75% {
+        content: 'Loading...';
+    }
+    100% {
+        content: 'Loading';
+    }
+}
